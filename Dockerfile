@@ -31,9 +31,9 @@ RUN apt-get update \
     && apt-get clean
 
 RUN useradd --system --uid=10000 --shell=/sbin/nologin --group=dialout lorawan
-COPY --from=buildenv --chown=buildenv /home/buildenv/buildout /usr/libexec/lorawan
-COPY --from=buildenv --chown=buildenv /home/buildenv/mcu_bin /usr/libexec/lorawan/mcu_bin/
+COPY --from=buildenv --chown=buildenv /home/buildenv/buildout /usr/libexec/wm1302
+COPY --from=buildenv --chown=buildenv /home/buildenv/mcu_bin /usr/libexec/wm1302/mcu_bin/
 
 USER lorawan
-WORKDIR /usr/libexec/lorawan
-CMD [ "/usr/libexec/lorawan/lora_pkt_fwd", "-c", "config.json" ]
+WORKDIR /usr/libexec/wm1302
+CMD [ "/usr/libexec/wm1302/lora_pkt_fwd", "-c", "config.json" ]

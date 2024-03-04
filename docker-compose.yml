@@ -6,6 +6,6 @@ services:
       # Mount device files
       - /dev:/dev:rw
       # Mount radio and system specific config
-      - ./files/wm1302-eu868-usb.json:/usr/libexec/lorawan/config.json:ro
+      - ./files/wm1302-eu868-usb.json:/usr/libexec/wm1302/config.json:ro
     environment:
       - TZ=Europe/Berlin
