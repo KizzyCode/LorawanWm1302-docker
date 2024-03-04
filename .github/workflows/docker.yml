@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   DOCKERFILE: Dockerfile
-  IMAGE_TAG: kizzycode/lorawan-wm1302-eu868-usb:latest
+  IMAGE_TAG: kizzycode/lorawan-wm1302:latest
 
 jobs:
   build-and-push-image:
