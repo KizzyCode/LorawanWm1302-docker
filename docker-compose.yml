@@ -1,0 +1,11 @@
+services:
+  lorawan:
+    build: ./
+    privileged: true
+    volumes:
+      # Mount device files
+      - /dev:/dev:rw
+      # Mount radio and system specific config
+      - ./files/wm1302-eu868-usb.json:/usr/libexec/lorawan/config.json:ro
+    environment:
+      - TZ=Europe/Berlin
